@@ -55,19 +55,19 @@ public class Main {
             result=inputList.get(0)+inputList.get(1);
             symbolKey=0;
 
-        } else if (opr.equals("a")) {
+        } else if (opr =="s") {
             result=inputList.get(0)-inputList.get(1);
             symbolKey=1;
 
-        } else if (opr.equals("a")) {
+        } else if (opr =="m") {
             result=inputList.get(0)*inputList.get(1);
             symbolKey=2;
 
-        } else if (opr.equals("a")) {
+        } else if (opr =="d") {
             result=inputList.get(0)/inputList.get(1);
             symbolKey=3;
 
-        } else if (opr.equals("a")) {
+        } else if (opr =="r") {
             result=inputList.get(0)%inputList.get(1);
             symbolKey=4;
 
@@ -82,7 +82,6 @@ public class Main {
         return String.valueOf((double) result);
 
     }
-
 
 
 }
