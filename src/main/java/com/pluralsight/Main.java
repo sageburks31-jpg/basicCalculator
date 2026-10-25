@@ -19,11 +19,11 @@ public class Main {
 
         System.out.print("Enter the first number:");
         int firNum=scanner.nextInt();
-        numinput(firNum);
+        numInput(firNum);
 
         System.out.print("Enter the second number:");
         int secNum=scanner.nextInt();
-        numinput(secNum);
+        numInput(secNum);
 
         scanner.nextLine();
         System.out.println("Possible calculations:");
@@ -36,41 +36,39 @@ public class Main {
 
         String ans=scanner.nextLine();
         operate(ans);
-
     }
 
-    public static double numinput(double num) {
+    public static void numInput(double num) {
         inputList.add(num);
-        return num;
     }
 
     static double result=0.0;
 
-    public static String operate(String opr) {
+    public static void operate(String opr) {
 
         String lowerCase = opr.toLowerCase();
-        opr=lowerCase;
 
-        if (opr.equals("a")){
-            result=inputList.get(0)+inputList.get(1);
-            symbolKey=0;
-
-        } else if (opr =="s") {
-            result=inputList.get(0)-inputList.get(1);
-            symbolKey=1;
-
-        } else if (opr =="m") {
-            result=inputList.get(0)*inputList.get(1);
-            symbolKey=2;
-
-        } else if (opr =="d") {
-            result=inputList.get(0)/inputList.get(1);
-            symbolKey=3;
-
-        } else if (opr =="r") {
-            result=inputList.get(0)%inputList.get(1);
-            symbolKey=4;
-
+        switch (lowerCase) {
+            case "a" -> {
+                result = inputList.get(0) + inputList.get(1);
+                symbolKey = 0;
+            }
+            case "s" -> {
+                result = inputList.get(0) - inputList.get(1);
+                symbolKey = 1;
+            }
+            case "m" -> {
+                result = inputList.get(0) * inputList.get(1);
+                symbolKey = 2;
+            }
+            case "d" -> {
+                result = inputList.get(0) / inputList.get(1);
+                symbolKey = 3;
+            }
+            case "r" -> {
+                result = inputList.get(0) % inputList.get(1);
+                symbolKey = 4;
+            }
         }
 
         System.out.print(inputList.get(0));
@@ -79,9 +77,5 @@ public class Main {
 
         inputList.clear();
         inputList.add(result);
-        return String.valueOf((double) result);
-
     }
-
-
 }
